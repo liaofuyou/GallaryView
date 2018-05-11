@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="me.ajax.galleryview.MainActivity">
 
-
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="300dp"

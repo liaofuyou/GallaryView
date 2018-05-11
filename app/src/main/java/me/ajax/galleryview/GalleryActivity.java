@@ -16,11 +16,12 @@ public class GalleryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
 
+        getWindow().getDecorView().setBackgroundColor(0xFF000000);
+
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
         //LayoutManager
         recyclerView.setLayoutManager(
-                //new LinearLayoutManager(this));
                 new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 
         //SnapHelper
