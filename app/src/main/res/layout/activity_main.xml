@@ -5,29 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:padding="8dp"
     tools:context="me.ajax.galleryview.MainActivity">
 
     <ImageView
         android:id="@+id/image_view1"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginRight="8dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"
-        android:transitionName="transitionImg" />
+        android:src="@mipmap/ic_launcher" />
 
     <ImageView
         android:id="@+id/image_view2"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginRight="8dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"
-        android:transitionName="transitionImg" />
+        android:src="@mipmap/ic_launcher" />
 
     <ImageView
         android:id="@+id/image_view3"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"
-        android:transitionName="transitionImg" />
+        android:src="@mipmap/ic_launcher" />
 </LinearLayout>
