@@ -15,7 +15,6 @@ public class GalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
-
         getWindow().getDecorView().setBackgroundColor(0xFF000000);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -28,6 +27,7 @@ public class GalleryActivity extends AppCompatActivity {
         PagerSnapHelper mLinearSnapHelper = new PagerSnapHelper();
         mLinearSnapHelper.attachToRecyclerView(recyclerView);
 
+        //ItemTouchHelper
         ItemTouchHelperCallback itemTouchHelperCallback = new ItemTouchHelperCallback();
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemTouchHelperCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
