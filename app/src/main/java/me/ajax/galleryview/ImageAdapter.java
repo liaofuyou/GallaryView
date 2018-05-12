@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,16 +17,6 @@ import java.util.List;
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
 
     private List<String> myData = new ArrayList<>();
-
-    public ImageAdapter() {
-        myData.add("##");
-        myData.add("##");
-        myData.add("##");
-        myData.add("##");
-        myData.add("##");
-        myData.add("##");
-        myData.add("##");
-    }
 
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -42,8 +34,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         return myData.size();
     }
 
+    public void setImageUrl(ArrayList<String> imageUrls) {
+        if (imageUrls == null) return;
+        this.myData.addAll(imageUrls);
+    }
+
     //自定义Holder
     static class ImageViewHolder extends RecyclerView.ViewHolder {
+
         private ImageView imageView;
 
 
@@ -53,7 +51,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         }
 
         public void setImageUrl(String imageUrl) {
-            //imageView.setBackgroundResource(imageUrl);
+            Glide.with(itemView.getContext())
+                    .load(imageUrl)
+                    .into(imageView);
         }
 
     }

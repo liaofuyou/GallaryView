@@ -9,6 +9,9 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 
 public class GalleryActivity extends AppCompatActivity {
 
+    public static final String EXTRA_IMAGE_URLS = "EXTRA_IMAGE_URLS";
+    public static final String EXTRA_CURR_INDEX = "EXTRA_CURR_INDEX";
+
     ImageAdapter imageAdapter;
 
     @Override
@@ -21,7 +24,7 @@ public class GalleryActivity extends AppCompatActivity {
 
         //LayoutManager
         recyclerView.setLayoutManager(
-                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         //SnapHelper
         PagerSnapHelper mLinearSnapHelper = new PagerSnapHelper();
@@ -34,5 +37,8 @@ public class GalleryActivity extends AppCompatActivity {
 
         //adapter
         recyclerView.setAdapter(imageAdapter = new ImageAdapter());
+
+        imageAdapter.setImageUrl(getIntent().getStringArrayListExtra(EXTRA_IMAGE_URLS));
+        recyclerView.scrollToPosition(getIntent().getIntExtra(EXTRA_CURR_INDEX, 0));
     }
 }
